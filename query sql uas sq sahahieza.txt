@@ -1,0 +1,334 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\user> docker login
+Authenticating with existing credentials...
+Login Succeeded
+PS C:\Users\user> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Users\user> docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Users\user> docker stop <container_id_or_name>
+At line:1 char:13
++ docker stop <container_id_or_name>
++             ~
+The '<' operator is reserved for future use.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RedirectionNotSupported
+
+PS C:\Users\user> docker rm <postgras>
+At line:1 char:11
++ docker rm <postgras>
++           ~
+The '<' operator is reserved for future use.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RedirectionNotSupported
+
+PS C:\Users\user> docker rm <postgres>
+At line:1 char:11
++ docker rm <postgres>
++           ~
+The '<' operator is reserved for future use.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RedirectionNotSupported
+
+PS C:\Users\user> docker run --name pg -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+3544c5be6624ab8849fa4c62eeeaf87b1582e5867f2fa88c912dd2e6c76f116d
+PS C:\Users\user> docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+c1ec31eb5944: Pull complete
+Digest: sha256:1408fec50309afee38f3535383f5b09419e6dc0925bc69891e79d84cc4cdcec6
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+PS C:\Users\user> docker ps --all
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                     PORTS
+   NAMES
+506a0d7c5af3   hello-world   "/hello"                 10 seconds ago   Exited (0) 9 seconds ago
+   heuristic_antonelli
+3544c5be6624   postgres      "docker-entrypoint.s…"   7 hours ago      Up 7 hours                 0.0.0.0:5432->5432/tcp   pg
+PS C:\Users\user> docker-compose ps
+no configuration file provided: not found
+PS C:\Users\user> docker ps
+CONTAINER ID   IMAGE      COMMAND                  CREATED       STATUS       PORTS                    NAMES
+3544c5be6624   postgres   "docker-entrypoint.s…"   7 hours ago   Up 7 hours   0.0.0.0:5432->5432/tcp   pg
+PS C:\Users\user> docker exec -it <psg> psql -U <postgres> -d <album>
+At line:1 char:17
++ docker exec -it <psg> psql -U <postgres> -d <album>
++                 ~
+The '<' operator is reserved for future use.
+At line:1 char:31
++ docker exec -it <psg> psql -U <postgres> -d <album>
++                               ~
+The '<' operator is reserved for future use.
+At line:1 char:45
++ docker exec -it <psg> psql -U <postgres> -d <album>
++                                             ~
+The '<' operator is reserved for future use.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RedirectionNotSupported
+
+PS C:\Users\user> select*From album
+select*From : The term 'select*From' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ select*From album
++ ~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (select*From:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user> docker ps
+CONTAINER ID   IMAGE      COMMAND                  CREATED       STATUS       PORTS                    NAMES
+3544c5be6624   postgres   "docker-entrypoint.s…"   7 hours ago   Up 7 hours   0.0.0.0:5432->5432/tcp   pg
+PS C:\Users\user> INSERT INTO public.users (user_id, first_name, last_name, gender, level)
+At line:1 char:34
++ INSERT INTO public.users (user_id, first_name, last_name, gender, lev ...
++                                  ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingArgument
+
+PS C:\Users\user> VALUES
+VALUES : The term 'VALUES' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ VALUES
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (VALUES:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\user> docker login
+Authenticating with existing credentials...
+Login Succeeded
+PS C:\Users\user> INSERT INTO public.users (user_id, first_name, last_name, gender, level)
+>> VALUES
+At line:1 char:34
++ INSERT INTO public.users (user_id, first_name, last_name, gender, lev ...
++                                  ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingArgument
+
+PS C:\Users\user> INSERT INTO public.users (user_id, first_name, last_name, gender, level)
+>> VALUES (1, 'John', 'Doe', 'M', 'free');
+At line:1 char:34
++ INSERT INTO public.users (user_id, first_name, last_name, gender, lev ...
++                                  ~
+Missing argument in parameter list.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingArgument
+
+PS C:\Users\user> SELECT * FROM album
+Select-Object : A positional parameter cannot be found that accepts argument 'FROM'.
+At line:1 char:1
++ SELECT * FROM album
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-Object], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SelectObjectCommand
+
+PS C:\Users\user> docker exec -it my_postgres psql -U postgres -d album
+Error response from daemon: No such container: my_postgres
+
+What's next?
+  Try Docker Debug for seamless, persistent debugging tools in any container or image → docker debug my_postgres
+  Learn more at https://docs.docker.com/go/debug-cli/
+PS C:\Users\user> docker exec -it psg psql -U postgres -d album
+Error response from daemon: No such container: psg
+
+What's next?
+  Try Docker Debug for seamless, persistent debugging tools in any container or image → docker debug psg
+  Learn more at https://docs.docker.com/go/debug-cli/
+PS C:\Users\user> docker exec -it pg psql -U postgres -d album
+psql (16.3 (Debian 16.3-1.pgdg120+1))
+Type "help" for help.
+
+album=# SELECT * FROM songs;
+ song_id |     title      | artist_id | year | duration
+---------+----------------+-----------+------+----------
+ 1       | Song One       | 1         | 2020 |      180
+ 2       | Song Two       | 2         | 2019 |      200
+ 3       | Song Three     | 3         | 2021 |      150
+ 4       | Song Four      | 4         | 2018 |      210
+ 5       | Song Five      | 5         | 2022 |      190
+ 6       | Song Six       | 6         | 2017 |      220
+ 7       | Song Seven     | 7         | 2016 |      180
+ 8       | Song Eight     | 8         | 2015 |      230
+ 9       | Song Nine      | 9         | 2014 |      200
+ 10      | Song Ten       | 10        | 2023 |      240
+ 11      | Song Eleven    | 11        | 2022 |      180
+ 12      | Song Twelve    | 12        | 2021 |      210
+ 13      | Song Thirteen  | 13        | 2020 |      190
+ 14      | Song Fourteen  | 14        | 2019 |      200
+ 15      | Song Fifteen   | 15        | 2018 |      180
+ 16      | Song Sixteen   | 16        | 2017 |      220
+ 17      | Song Seventeen | 17        | 2016 |      190
+ 18      | Song Eighteen  | 18        | 2015 |      210
+ 19      | Song Nineteen  | 19        | 2014 |      200
+ 20      | Song Twenty    | 20        | 2023 |      230
+(20 rows)
+
+album=# INSERT INTO public.songs (song_id, title, artist_id, "year", duration)
+VALUES ('1', 'Song Twentyone', '21', 2024, 220);
+ERROR:  duplicate key value violates unique constraint "songs_pkey"
+DETAIL:  Key (song_id)=(1) already exists.
+album=# INSERT INTO public.songs (song_id, title, artist_id, "year", duration)
+VALUES ('21', 'Song Twentyone', '21', 2024, 220);
+ERROR:  insert or update on table "songs" violates foreign key constraint "fk_song_id"
+DETAIL:  Key (song_id)=(21) is not present in table "songplays".
+album=# SELECT * FROM users;
+ user_id | first_name | last_name | gender | level
+---------+------------+-----------+--------+-------
+       1 | John       | Doe       | M      | free
+       2 | Jane       | Smith     | F      | paid
+       3 | Alice      | Johnson   | F      | free
+       4 | Bob        | Lee       | M      | paid
+       5 | Charlie    | Brown     | M      | free
+       6 | Daisy      | Miller    | F      | paid
+       7 | Ethan      | Williams  | M      | free
+       8 | Fiona      | Davis     | F      | paid
+       9 | George     | Wilson    | M      | free
+      10 | Hannah     | Moore     | F      | paid
+      11 | Isabella   | Clark     | F      | free
+      12 | Jack       | Young     | M      | paid
+      13 | Lily       | Allen     | F      | free
+      14 | Matthew    | Hall      | M      | paid
+      15 | Olivia     | Lewis     | F      | free
+      16 | Peter      | Wilson    | M      | free
+      17 | Sophia     | Taylor    | F      | paid
+      18 | Thomas     | Martin    | M      | free
+      19 | Victoria   | Moore     | F      | paid
+      20 | William    | Anderson  | M      | free
+(20 rows)
+
+album=# INSERT INTO public.users (user_id, first_name, last_name, gender, level)
+VALUES (21, 'Olivia', 'Rodrigo', 'F', 'paid');
+INSERT 0 1
+album=# SELECT * FROM users;
+ user_id | first_name | last_name | gender | level
+---------+------------+-----------+--------+-------
+       1 | John       | Doe       | M      | free
+       2 | Jane       | Smith     | F      | paid
+       3 | Alice      | Johnson   | F      | free
+       4 | Bob        | Lee       | M      | paid
+       5 | Charlie    | Brown     | M      | free
+       6 | Daisy      | Miller    | F      | paid
+       7 | Ethan      | Williams  | M      | free
+       8 | Fiona      | Davis     | F      | paid
+       9 | George     | Wilson    | M      | free
+      10 | Hannah     | Moore     | F      | paid
+      11 | Isabella   | Clark     | F      | free
+      12 | Jack       | Young     | M      | paid
+      13 | Lily       | Allen     | F      | free
+      14 | Matthew    | Hall      | M      | paid
+      15 | Olivia     | Lewis     | F      | free
+      16 | Peter      | Wilson    | M      | free
+      17 | Sophia     | Taylor    | F      | paid
+      18 | Thomas     | Martin    | M      | free
+      19 | Victoria   | Moore     | F      | paid
+      20 | William    | Anderson  | M      | free
+      21 | Olivia     | Rodrigo   | F      | paid
+(21 rows)
+
+album=# UPDATE users SET first_name = 'Josh' WHERE user_id = '1';
+UPDATE 1
+album=# SELECT * FROM users;
+ user_id | first_name | last_name | gender | level
+---------+------------+-----------+--------+-------
+       2 | Jane       | Smith     | F      | paid
+       3 | Alice      | Johnson   | F      | free
+       4 | Bob        | Lee       | M      | paid
+       5 | Charlie    | Brown     | M      | free
+       6 | Daisy      | Miller    | F      | paid
+       7 | Ethan      | Williams  | M      | free
+       8 | Fiona      | Davis     | F      | paid
+       9 | George     | Wilson    | M      | free
+      10 | Hannah     | Moore     | F      | paid
+      11 | Isabella   | Clark     | F      | free
+      12 | Jack       | Young     | M      | paid
+      13 | Lily       | Allen     | F      | free
+      14 | Matthew    | Hall      | M      | paid
+      15 | Olivia     | Lewis     | F      | free
+      16 | Peter      | Wilson    | M      | free
+      17 | Sophia     | Taylor    | F      | paid
+      18 | Thomas     | Martin    | M      | free
+      19 | Victoria   | Moore     | F      | paid
+      20 | William    | Anderson  | M      | free
+      21 | Olivia     | Rodrigo   | F      | paid
+       1 | Josh       | Doe       | M      | free
+(21 rows)
+
+album=# UPDATE users SET first_name = 'Josh' WHERE user_id = '1';
+What's next?
+  Try Docker Debug for seamless, persistent debugging tools in any container or image → docker debug pg
+  Learn more at https://docs.docker.com/go/debug-cli/
+PS C:\Users\user> docker exec -it pg psql -U postgres -d album
+psql (16.3 (Debian 16.3-1.pgdg120+1))
+Type "help" for help.
+
+album=# DELETE FROM songs WHERE nim = '1';
+ERROR:  column "nim" does not exist
+LINE 1: DELETE FROM songs WHERE nim = '1';
+                                ^
+album=# DELETE FROM songs WHERE songs_id = '1';
+ERROR:  column "songs_id" does not exist
+LINE 1: DELETE FROM songs WHERE songs_id = '1';
+                                ^
+HINT:  Perhaps you meant to reference the column "songs.song_id".
+album=# DELETE FROM songs WHERE user_id = '1';
+ERROR:  column "user_id" does not exist
+LINE 1: DELETE FROM songs WHERE user_id = '1';
+                                ^
+album=# DELETE FROM users WHERE user_id = '1';
+ERROR:  update or delete on table "users" violates foreign key constraint "fk_user_id" on table "songplays"
+DETAIL:  Key (user_id)=(1) is still referenced from table "songplays".
+album=# DELETE FROM users WHERE user_id = '21';
+DELETE 1
+album=# SELECT * FROM users;
+ user_id | first_name | last_name | gender | level
+---------+------------+-----------+--------+-------
+       2 | Jane       | Smith     | F      | paid
+       3 | Alice      | Johnson   | F      | free
+       4 | Bob        | Lee       | M      | paid
+       5 | Charlie    | Brown     | M      | free
+       6 | Daisy      | Miller    | F      | paid
+       7 | Ethan      | Williams  | M      | free
+       8 | Fiona      | Davis     | F      | paid
+       9 | George     | Wilson    | M      | free
+      10 | Hannah     | Moore     | F      | paid
+      11 | Isabella   | Clark     | F      | free
+      12 | Jack       | Young     | M      | paid
+      13 | Lily       | Allen     | F      | free
+      14 | Matthew    | Hall      | M      | paid
+      15 | Olivia     | Lewis     | F      | free
+      16 | Peter      | Wilson    | M      | free
+      17 | Sophia     | Taylor    | F      | paid
+      18 | Thomas     | Martin    | M      | free
+      19 | Victoria   | Moore     | F      | paid
+      20 | William    | Anderson  | M      | free
+       1 | Josh       | Doe       | M      | free
+(20 rows)
+
+album=#
