@@ -190,14 +190,6 @@ album=# SELECT * FROM songs;
  20      | Song Twenty    | 20        | 2023 |      230
 (20 rows)
 
-album=# INSERT INTO public.songs (song_id, title, artist_id, "year", duration)
-VALUES ('1', 'Song Twentyone', '21', 2024, 220);
-ERROR:  duplicate key value violates unique constraint "songs_pkey"
-DETAIL:  Key (song_id)=(1) already exists.
-album=# INSERT INTO public.songs (song_id, title, artist_id, "year", duration)
-VALUES ('21', 'Song Twentyone', '21', 2024, 220);
-ERROR:  insert or update on table "songs" violates foreign key constraint "fk_song_id"
-DETAIL:  Key (song_id)=(21) is not present in table "songplays".
 album=# SELECT * FROM users;
  user_id | first_name | last_name | gender | level
 ---------+------------+-----------+--------+-------
